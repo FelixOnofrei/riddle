@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_player import st_player
 
 
 def check_password_level2():
@@ -38,8 +39,6 @@ def check_password_level2():
 
 def check_password_level1():
     """Returns `True` if the user had the correct password for level 2."""
-
-
     if "level1_unlocked" in st.session_state:
         return st.session_state["level1_unlocked"]
 
@@ -174,7 +173,7 @@ if st.session_state["show_final_offer"]:
     st.title("I'm gonna make you an offer you can't refuse")
 
 
-    st.video(st.secrets["youtube_link"])
+    st_player(st.secrets['youtube_link'], loop=True, play_inline=True)
 else:
 
     if st.session_state["current_level"] == 1:
