@@ -152,7 +152,7 @@ def check_password_level3():
     if st.button("Submit", key="submit_level3"):
         if password_input.lower() == st.secrets["password_level3"]:
             st.session_state["level3_unlocked"] = True
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("😕 Not today...")
             return False
@@ -254,7 +254,7 @@ if st.session_state["current_level"] == 1 and not st.session_state["show_final_o
 
             if st.button("Drumul"):
                 st.session_state["current_level"] = 2
-                st.experimental_rerun()
+                st.rerun()
 
 # Handle level 2
 elif st.session_state["current_level"] == 2 and not st.session_state["show_final_offer"]:
@@ -326,7 +326,7 @@ elif st.session_state["current_level"] == 2 and not st.session_state["show_final
 
             if st.button("Destinatia"):
                 st.session_state["current_level"] = 3
-                st.experimental_rerun()
+                st.rerun()
 
 # Handle level 3
 elif st.session_state["current_level"] == 3 and not st.session_state["show_final_offer"]:
@@ -378,7 +378,7 @@ elif st.session_state["current_level"] == 3 and not st.session_state["show_final
 
             paragraph1 = st.secrets.level3_text_p1
             paragraph1 = paragraph1.replace("“Acasă”", "<span class=\"emphasis\">“Acasă”</span>")
-            
+
             paragraph2 = st.secrets.level3_text_p2
 
 
@@ -396,5 +396,5 @@ elif st.session_state["current_level"] == 3 and not st.session_state["show_final
             if st.button("Acasa"):
 
                 st.session_state["show_final_offer"] = True
-                st.experimental_rerun()
+                st.rerun()
 
