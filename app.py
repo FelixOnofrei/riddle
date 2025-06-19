@@ -377,11 +377,11 @@ elif st.session_state["current_level"] == 3 and not st.session_state["show_final
 
 
             paragraph1 = st.secrets.level3_text_p1
+            paragraph1 = paragraph1.replace("“Acasă”", "<span class=\"emphasis\">“Acasă”</span>")
+            
+            paragraph2 = st.secrets.level3_text_p2
 
 
-            paragraph2_text = st.secrets.level3_text_p2
-
-            paragraph2 = paragraph2_text.replace("acel fior al inimii", "<span class=\"emphasis\">acel fior al inimii</span>")
 
 
 
