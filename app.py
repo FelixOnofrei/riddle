@@ -173,7 +173,7 @@ if st.session_state["show_final_offer"]:
     st.title("I'm gonna make you an offer you can't refuse")
 
 
-    st_player(st.secrets['youtube_link'], loop=True, play_inline=True)
+    st_player(st.secrets['youtube_link'], loop=True, play_inline=True, playing=True)
 else:
 
     if st.session_state["current_level"] == 1:
